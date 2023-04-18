@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* estilizar cabeçalho */
+        .header {
+            background-color: #09075d;
+            padding: 30px;
+            color: #f1f1f1;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        /* Criar colunas */
+        .column {
+            float: left;
+            padding: 10px;
+            height: 300px;
+        
+        }
+
+        /* colunas laterais*/
+        .column.lateral {
+            width: 25%;
+        }
+
+        /* coluna central */
+        .column.central {
+            width: 50%;
+        }
+
+        /* limpar flutuações depois das colunas */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* estilo rodape */
+        .footer {
+            background-color: #020202;
+            color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Responsivo */
+        @media (max-width: 600px) {
+
+            .column.lateral,
+            .column.central {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Template com float</h2>
+
+    <div class="header">
+        <h2 style="font-size: 40px;">Header</h2>
+    </div>
+
+    <div class="row">
+        <div class="column lateral" style="background-color:#aaa;">Column</div>
+        <div class="column central" style="background-color:#bbb;">Column</div>
+        <div class="column lateral" style="background-color:#ccc;">Column</div>
+    </div>
+
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+
+</body>
+
+</html>
