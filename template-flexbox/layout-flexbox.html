@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+    *{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+    background-color: #09075d;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+
+/* Container for flexboxes */
+.row {
+    display: -webkit-flex;  /* para navegadores que não tem flex (webkit e mozilla) */
+    display: flex;
+}
+
+/* cria colunas e define tamanho na vertical */
+.column {
+    padding: 10px;
+    height: 300px;
+}
+
+/* coluna esquerda e direita (laterais) */
+.column.lateral {
+    -webkit-flex: 1; 
+    -ms-flex: 1;        /* define quantas partes do total serão usadas nessa coluna  */
+    flex: 1;
+}
+
+/* coluna do meio */
+.column.central {
+    -webkit-flex: 2;
+    -ms-flex: 2;        /* define quantas partes do total serão usadas nessa coluna  */
+    flex: 2;
+}
+
+/* rodape */
+.footer {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer p{
+    color: #f1f1f1;
+}
+
+/* Layout responsivo - faz com que as três colunas sejam empilhadas umas sobre as outras, em vez de uma ao lado da outra */
+@media (max-width: 600px) {
+    .row {
+        -webkit-flex-direction: column;     /* muda para coluna quando espaço é menor que 600px */
+        flex-direction: column;
+    }
+}
+</style>
+
+<body>
+
+    <h2 style="margin: 10px;font-size: 40px;"> Modelo layout</h2>
+
+    <div class="header">
+        <h2 style="color: aliceblue;">Header</h2>
+    </div>
+
+    <div class="row">
+        <div class="column lateral" style="background-color:#aaa;">Column</div>
+        <div class="column central" style="background-color:#bbb;">Column</div>
+        <div class="column lateral" style="background-color:#ccc;">Column</div>
+    </div>
+
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+
+</body>
+
+</html>
